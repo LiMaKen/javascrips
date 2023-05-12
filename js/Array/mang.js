@@ -6,7 +6,7 @@ function string(arr)// doi sang string
 {
   return arr.toString()
 }
-function join(arr) // them khoang cach giua hai phan tu
+function join(arr) // them khoang cach giua hai phan tu thành một chuỗi string
 {
   return arr.join('-')
 }
