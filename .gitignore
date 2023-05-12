@@ -1,0 +1,15 @@
+.vs
+*.rpf
+bin
+dotnet/server_exceptions.txt
+dotnet/resources/.vs
+dotnet/server_exceptions.txt
+client_packages/.listcache
+dotnet/resources/mCore.Framework/bin
+dotnet/resources/mCore.Framework/obj
+dotnet/resources/mCore.Framework/.vs
+dotnet/resources/mCore.Gamemode/obj
+dotnet/resources/mCore.Gamemode/.vs
+dotnet/resources/mCore.Gamemode/bin
+dotnet/server_logs.txt
+RestartOnCrash/settings.ini
