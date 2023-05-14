@@ -40,6 +40,7 @@
 //  console.log(boxNode)
 //  for (var i=0; i< boxNode.length ; i++ ){
 //     console.log(boxNode[i])
+//}
 //console.log(document.forms('form1'))
 
 //4 DOM attributes
@@ -60,7 +61,7 @@
 //heading.innerHTML= '<h2 id="testtt">test</h2>' // gán và lấy một element, ghi đè và lấy dưới attribust
 //heading.outerHTML= '<h2 id="testtt">test</h2>' // gán và lấy một element, ghi đè và lấy từ attribust ( giá trị không còn tồn tại trong html nữa)
 
-//VD:
+/*VD:
 var courses = ['HTML & CSS', 'Javascript', 'PHP', 'Java']
 
 function render(courses) {
@@ -75,7 +76,7 @@ function render(courses) {
         return ganthe
     
 }
-console.log( render(courses))
+console.log( render(courses))*/
 
 //7 
 /*console.log([boxElement]) đây là cách tìm cách phương thức
@@ -116,3 +117,118 @@ parentNode: là node cha của node đang xét spellcheck: để check chính t�
 
 Tất cả các Element trong HTML đều có thể biến thành 1 thẻ input Khi 1 Element có attribute là contenteditable="" thì chính nó và element con của nó có thể chỉnh sữa như 1 thẻ input
 */
+
+
+// 8 DOM STYLE
+
+/*var boxElement = document.querySelector('.box')
+boxElement.style.backgroundColor = "red" 
+Object.assign(boxElement.style,{ // set nhiều css
+    width: '200px',
+    height: ' 100px',
+})
+console.log(boxElement.style.with) // lấy css*/
+
+//9 ClassList property 
+//add  tao 
+// contains kiem tra xem co khong
+ //remove xoa bo
+//toggle co class goi den thì sẽ xóa bỏ không có thì sẽ thêm
+// var boxElement = document.querySelector('.box')
+// //console.log(boxElement.classList.value)
+// //boxElement.classList.add('red','blue')
+// console.log(boxElement.classList.contains('blue'))
+// boxElement.classList.remove('red')
+
+// setInterval(()=> {
+//     boxElement.classList.toggle('red')
+// }
+// ,1000)
+
+//10 DOM event
+//1. attribite event
+// 2 . assign event using the element node
+//1 
+// <h1 onclick="console.log(this)"> fdasfasdfdsaf </h1>
+//2
+// var boxElement = document.querySelector('.box h1')
+// boxElement.onclick = (function(){
+//     console.log(Math.random())
+// })
+// var boxElement = document.querySelectorAll('.box h1')
+// for ( var i =0; i<boxElement.length;++i)
+// {
+//     boxElement[i].onclick=(function(e){
+//         console.log(e.target)
+//     })
+// }
+
+
+//11 DOM event
+//1 . input / select
+//2 keyup/keydown
+
+var input = 
+document.querySelector('input[type="text"')
+// input.oninput = function(e){         // gõ gì lấy đấy
+//     console.log(e.target.value)
+// }
+// input.onchange = function(e){         // gõ xong bỏ ra mới lấy
+//     console.log(e.target.value)
+// }
+//onkeyup nhấn và nhấc lên
+// onkeydown nhấn
+//onkeypress nhấn hoặc giữ  
+
+// input.onkeyup = function(e){
+//     switch(e.which){
+//         case 27: 
+//         console.log("exit")
+//         break;
+//     }
+// }
+// hoặc lắng nghe vào trực tiếp document để lấy toàn thế web
+// document.onkeydown = function(e){
+//     switch(e.which){
+//         case 27:
+//             console.log('exit')
+//             break
+//     }
+// }
+
+//12 DOM Event 
+//1 preventdefault loại bỏ hành vi mặc định của trình duyệt trên thẻ html
+//2 stopproagation loại bỏ sự kiện nổi bọt
+/*document.querySelector('div').onclick =
+function(e){
+    e.preventDefault() // loaij bor hanh vi mac dinh
+
+}
+document.querySelector('div').onclick =
+function(e){
+    e.stopproagation() // ngăn chặn sự kiện nổi bọi từ thẻ con lấy ra thẻ cha
+
+}*/
+
+//13 Event listener
+//1 xử lý nhiều việc khi 1 event xảy ra 
+//2 lắng nghe/ hủy bỏ lắng nghe 
+var btn = document.querySelector('div')
+function viec1(){
+    console.log('viec 1') // công việc 1
+}
+function viec2(){
+    console.log('viec 1')// công việc 1 
+}
+btn.addEventListener('click',viec1) // gọi onclick và funtion viec 1
+btn.addEventListener('click',viec2)// gọi onclick và funtion viec 2
+setTimeout(function(){
+    btn.removeEventListener('click',viec2) // bỏ lắng nghe việc 2
+},3000)
+
+
+
+
+
+
+
