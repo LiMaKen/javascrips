@@ -6,3 +6,11 @@ fetch(testApi)
 .then(function(date){
     console.log(date)
 })
+
+
+
+
+// Create: tạo mới -> post
+// read: lấy dữ liệu -> get
+// upodate: chỉnh sửa -> put/patch
+// delete : xóa
