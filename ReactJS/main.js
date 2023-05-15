@@ -116,3 +116,121 @@ const tao = React.createElement(
     ReactDOM.render(ul,roots)
     
 </script>*/
+
+
+//6 Jsx Render 
+  // render nhieu element jsx 
+/*const ul = ( 
+    <React.fragment> 
+    <h1> test1 </h1>
+    <h1> test1 </h1>
+    </React.fragment>
+)
+*/
+
+
+//7 React element type 
+/*function PostItem(){
+    return (
+        <div className="post-item">
+            <img src='https://files.fullstack.edu.vn/f8-prod/blog_posts/6630/63fd6b687b938.jpg'/>
+            <h2 className="post-description">Ngành gì đang hot hiện nay? Top ngành nghề dự báo trở thành xu thế </h2>
+            <p className="post-info">Nếu bạn đang phân vân trong việc chọn ngành, chuyển ngành thì có thể tham </p>
+        </div>
+    )
+}
+
+//PostItem
+const app = (
+    
+        <PostItem/>
+    
+)
+
+// React-DOM --> render UI
+ReactDOM.render(app, document.getElementById("root"))*/
+
+//cachs 2 :
+/*function PostItem(){
+    return (
+        <div className="post-item">
+            <img src='https://files.fullstack.edu.vn/f8-prod/blog_posts/6630/63fd6b687b938.jpg'/>
+            <h2 className="post-description">Ngành gì đang hot hiện nay? Top ngành nghề dự báo trở thành xu thế </h2>
+            <p className="post-info">Nếu bạn đang phân vân trong việc chọn ngành, chuyển ngành thì có thể tham </p>
+        </div>
+    )
+}
+
+//PostItem
+function App()  {
+   return(
+     <div id="warper">
+        <PostItem/>
+        <PostItem/>
+        <PostItem/>
+    </div>
+   )
+}
+
+// React-DOM --> render UI
+ReactDOM.render(<App />, document.getElementById("root"))*/
+
+
+
+//7 props 
+function PostItem({     
+    title,
+       image,
+       descriptions,   //destructuring //   biến truyền vào
+       students_count
+})   {
+return (
+   <div className="post-item">
+                 <h2 className="course-titele">{title}</h2>
+               <img src={image} alt={title} />   // lấy biến từ app
+               <p className="course-decripsiton">{descriptions}</p>
+               <p className="course-studentscount">{students_count}</p>
+   </div>
+)
+}
+
+//PostItem
+function App() {
+       return (
+           courses.map((course,index)=>{   
+               return(
+                   <PostItem
+                       key = {index}        //biến chạy lên postitem
+                       title = {course.title}
+                       image = {course.image_url}
+                       descriptions = {course.description}
+                       students_count = {course.students_count}
+                   />
+               )
+           }) 
+       )
+   }
+
+// React-DOM --> render UI
+ReactDOM.render(<App />, document.getElementById("root"))
+
+
+
+//8   Dom event ( onclick , keydown,....)
+function App() {
+    return (
+      <div id ="war">
+        <button>
+            onClick={()=>
+            alert()
+            }
+        </button>
+
+      </div>
+            )
+    }
+    
+
+
+// React-DOM --> render UI
+ReactDOM.render(<App />, document.getElementById("root"))
